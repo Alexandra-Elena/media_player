@@ -1,0 +1,38 @@
+﻿<Window x:Class="media_player.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Media Player" Width="500" SizeToContent="Height" ResizeMode="CanMinimize">
+    <StackPanel Background="White">
+        <Label x:Name="TitleLbl" Content="Media player" Padding="5,0,5,5" Margin="20" FontWeight="SemiBold" FontSize="16" BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"/>
+        <MediaElement x:Name="Player" LoadedBehavior="Manual" Stretch="None" Height="225" Margin="20,0"/>
+        <DockPanel Margin="20">
+            <Button Name="OpenBtn" Click="OpenBtn_Click" Padding="5" Margin="0,0,10,0" Background="#f0f0f0" Width="54">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Height="24" Width="24" Source="https://img.icons8.com/fluency/48/opened-folder.png"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="PlayPauseBtn" Click="PlayPauseBtn_Click" Padding="5" Margin="0,0,10,0" Background="#f0f0f0" Width="54">
+                <ContentControl x:Name="PlayPauseIcon">
+                    <TextBlock Text="▶️" FontSize="24" TextAlignment="Center" Width="38" />
+                </ContentControl>
+            </Button>
+            <Button Name="StopBtn" Click="StopBtn_Click" Padding="5" Margin="0,0,10,0" Background="#f0f0f0" Width="52">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Height="24" Width="24" Source="https://img.icons8.com/fluency/48/stop.png"/>
+                </StackPanel>
+            </Button>
+            <Button Name="PropertiesBtn" Click="PropertiesBtn_Click" Padding="5" Margin="0,0,10,0" Background="#f0f0f0" Width="51">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <Image Height="24" Width="24" Source="https://img.icons8.com/fluency/48/info.png"/>
+                </StackPanel>
+            </Button>
+            
+            <TextBlock Name="StatusLbl" FontSize="14" VerticalAlignment="Center" Margin="10,0" MinWidth="60" TextAlignment="Center">00:00:00</TextBlock>
+            <Slider Name="ProgressSlider" Maximum="1" Thumb.DragStarted="ProgressSlider_DragStarted" Thumb.DragCompleted="ProgressSlider_DragCompleted" ValueChanged="ProgressSlider_ValueChanged" VerticalAlignment="Center"/>
+        </DockPanel>
+    </StackPanel>
+</Window>
