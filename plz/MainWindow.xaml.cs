@@ -240,7 +240,6 @@ namespace media_player
             Player.Stretch = Stretch.Uniform;
         }
 
-
         #endregion
     }
 }
