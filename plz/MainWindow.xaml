@@ -70,7 +70,7 @@
                BorderBrush="DodgerBlue" BorderThickness="0,0,0,2"
                Foreground="DodgerBlue" HorizontalAlignment="Center"/>
 
-        <!-- Media Display -->
+        <!-- Media Display --> 
         <Grid Grid.Row="1" Background="Black">
             <MediaElement x:Name="Player"
                 LoadedBehavior="Manual"

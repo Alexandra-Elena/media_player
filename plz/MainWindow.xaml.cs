@@ -232,7 +232,6 @@ namespace media_player
         {
             if (Player.NaturalVideoWidth <= 0 || Player.NaturalVideoHeight <= 0)
                 return;
-
             Player.ClearValue(WidthProperty);
             Player.ClearValue(HeightProperty);
 
